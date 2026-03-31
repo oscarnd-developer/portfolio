@@ -14,17 +14,31 @@ export default function Projects() {
           Mis <span className="text-sky-400">Proyectos</span>
         </h2>
 
-        {/* Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* GRID */}
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8">
 
           {projects.map((project) => (
             <div 
               key={project.id}
               onClick={() => setSelected(project)}
-              className="bg-slate-800 rounded-2xl overflow-hidden cursor-pointer hover:scale-105 transition"
+              className="group bg-slate-800 rounded-2xl overflow-hidden cursor-pointer transform hover:scale-105 transition duration-300 relative"
             >
-              <img src={project.image} alt="" className="w-full h-48 object-cover" />
 
+              {/* IMAGEN */}
+              <img 
+                src={project.image} 
+                alt="" 
+                className="w-full h-48 object-cover"
+              />
+
+              {/* OVERLAY */}
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center transition">
+                <span className="text-white text-lg font-semibold">
+                  ▶ Ver demo
+                </span>
+              </div>
+
+              {/* INFO */}
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">
                   {project.title}
@@ -34,6 +48,7 @@ export default function Projects() {
                   {project.description}
                 </p>
               </div>
+
             </div>
           ))}
 
@@ -42,31 +57,48 @@ export default function Projects() {
 
       {/* MODAL */}
       {selected && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 px-4">
 
-          <div className="bg-slate-900 p-6 rounded-2xl max-w-lg w-full relative">
+          <div className="bg-slate-900 rounded-2xl w-full max-w-3xl relative overflow-hidden animate-fadeIn">
 
+            {/* BOTÓN CERRAR */}
             <button 
               onClick={() => setSelected(null)}
-              className="absolute top-3 right-3 text-gray-400"
+              className="absolute top-3 right-3 text-white text-xl z-10 hover:scale-110 transition"
             >
               ✕
             </button>
 
-            <h3 className="text-2xl font-bold mb-4">
-              {selected.title}
-            </h3>
+            {/* VIDEO LOCAL */}
+            <div className="w-full aspect-video bg-black">
+              <video 
+                src={selected.video}
+                controls
+                autoPlay
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-            <p className="text-gray-400 mb-4">
-              {selected.description}
-            </p>
+            {/* INFO */}
+            <div className="p-6 text-center">
+              <h3 className="text-2xl font-bold mb-2">
+                {selected.title}
+              </h3>
 
-            <div className="flex flex-wrap gap-2">
-              {selected.tech.map((t, i) => (
-                <span key={i} className="bg-sky-500/20 text-sky-400 px-3 py-1 rounded-lg text-sm">
-                  {t}
-                </span>
-              ))}
+              <p className="text-gray-400 mb-4">
+                {selected.description}
+              </p>
+
+              <div className="flex flex-wrap justify-center gap-2">
+                {selected.tech.map((t, i) => (
+                  <span 
+                    key={i} 
+                    className="bg-sky-500/20 text-sky-400 px-3 py-1 rounded-lg text-sm"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
             </div>
 
           </div>

@@ -105,7 +105,7 @@ export default function Contact() {
           </a>
 
           <a
-            href="https://github.com/TU-USUARIO"
+            href="https://github.com/oscarnd-developer"
             target="_blank"
             className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 px-5 py-3 rounded-xl font-semibold transition transform hover:scale-105 hover:shadow-lg hover:shadow-white/10"
           >

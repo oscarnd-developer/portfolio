@@ -8,9 +8,10 @@ export const projects = [
   },
   {
     id: 2,
-    title: "Gestion de equipos.",
-    description: "Gestión de equipos y mantenimientos.",
+    title: "Mantenimiento Preventivo.",
+    description: "El proyecto consistio en el mantenimiento preventivo de un laboratio universitario, para asi obtener un mejor rendimiento y cuidado con respecto a las maquinas de la institucion, con sensores LOT y simulaciones de laboratorio para llevar un mejor orden.",
     tech: ["Node.js", "Express", "MongoDB"],
     image: "Captura.png",
+    video:"/videos/Demo1.mp4",
   },
 ]

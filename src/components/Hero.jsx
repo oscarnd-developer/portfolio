@@ -48,9 +48,12 @@ export default function Hero() {
         Ver más
       </button>
 
-      <button className="border border-gray-600 hover:border-sky-400 px-6 py-3 rounded-xl transition">
+      <a
+      href="Norori.pdf"
+      download
+       className="border border-gray-600 hover:border-sky-400 px-6 py-3 rounded-xl transition">
         Descargar CV
-      </button>
+      </a>
     </div>
 
   </div>
