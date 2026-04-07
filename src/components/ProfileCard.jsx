@@ -28,7 +28,7 @@ export default function ProfileCard() {
         {/* BACK */}
         <div className="absolute w-full h-full backface-hidden rotate-y-180 rounded-2xl overflow-hidden shadow-xl">
           <img 
-            src="Icon.jpeg"
+            src="Icon2.jpeg"
             alt="Avatar"
             className="w-full h-full object-cover"
           />
